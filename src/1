@@ -1,0 +1,25 @@
+#ifndef MAIN_HPP
+#define MAIN_HPP
+
+#include <SDL2/SDL.h>
+#include <SDL2/SDL_mixer.h>
+
+class MusicPlayerApp {
+public:
+    MusicPlayerApp();
+    ~MusicPlayerApp();
+    void run();
+
+private:
+    SDL_Window* window;
+    SDL_Renderer* renderer;
+    Mix_Music* music;
+    bool isRunning;
+    void initSDL();
+    void loadMusic(const char* filename);
+    void cleanUp();
+    void handleEvents();
+    void render();
+};
+
+#endif 
